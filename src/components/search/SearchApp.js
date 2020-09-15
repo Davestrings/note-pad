@@ -1,39 +1,43 @@
-import React, {useState} from 'react';
-import Note from './Note';
-import Searchbar from './Searchbar'
+import React, { useState } from "react";
+import AddNotes from "./AddNotes";
+import Note from "./Note";
+import Searchbar from "./Searchbar";
 
 const SearchApp = () => {
-    const ourNotes =[
-        {
-            title:"My Daughter",
-            description:`Lorem Ipsum is simply dummy 
+  const ourNotes = [
+    {
+      title: "My Daughter",
+      description: `Lorem Ipsum is simply dummy 
                         text of the printing and typesetting 
                         industry. Lorem Ipsum has been the industry's 
                         standard dummy text ever since`,
-            time: new Date().toLocaleTimeString()
-        },{
-            title:"My son",
-            description:`Lorem Ipsum is simply dummy 
+      time: new Date(2013, 13, 1).toDateString(),
+    },
+    {
+      title: "My son",
+      description: `Lorem Ipsum is simply dummy 
                         text of the printing and typesetting 
                         industry. Lorem Ipsum has been the industry's 
                         standard dummy text ever since`,
-            time: new Date().toLocaleTimeString()
-        },
-    ]
+      time: new Date(2013, 12, 1).toDateString(),
+    },
+  ];
 
-    const [search, setSearch] = useState("")
+  const [search, setSearch] = useState("");
+  const [notes, setNotes] = useState(ourNotes);
 
-    const filteredNotes = ourNotes.filter((note,index)=>{
-        return note.title.toLowerCase().includes(search.toLowerCase())
-    })
+  const filteredNotes = notes.filter((note) => {
+    return note.title.toLowerCase().includes(search.toLowerCase());
+  });
 
-    return (
-        <div>
-            <h1>SearchApp</h1>
-            <Searchbar search={search} setSearch={setSearch} />
-            <Note notes={filteredNotes} />
-        </div>
-    );
-}
+  return (
+    <div>
+      <h1>SearchApp</h1>
+      <AddNotes note={notes} setNotes={setNotes} />
+      <Searchbar search={search} setSearch={setSearch} />
+      <Note notes={filteredNotes} />
+    </div>
+  );
+};
 
 export default SearchApp;

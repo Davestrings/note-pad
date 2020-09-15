@@ -1,39 +1,35 @@
-import React,{useEffect,useState} from 'react';
-import './App.css';
-import Practice from './components/practice/Practice';
-import Login from './components/practice/Login';
-import SearchApp from './components/search/SearchApp';
-
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import Practice from "./components/practice/Practice";
+import Login from "./components/practice/Login";
+import SearchApp from "./components/search/SearchApp";
 
 function App() {
-
   const [appState, setAppState] = useState({
-    isRegistered: false
-  })
+    isRegistered: false,
+    isLoggedIn: false,
+  });
 
+  useEffect(() => {
+    const localUser = JSON.parse(localStorage.getItem("user"));
 
-  useEffect(()=>{
-    const localUser = JSON.parse(sessionStorage.getItem("user"))
-
-    if(localUser !== null){
-      setAppState(
-        {
-          isRegistered:true
-        }
-      )
+    if (localUser !== null) {
+      setAppState({
+        isRegistered: true,
+      });
     }
-
-    console.log(localUser)
-    console.log("localUser:",localUser)
-    // sessionStorage.removeItem('user')
-    
-  },[])
+    console.log(localUser);
+    console.log("localUser:", localUser);
+    sessionStorage.removeItem("user");
+  }, []);
 
   return (
     <div className="App">
-      {/* {!appState.isRegistered? <Practice />: null }
-      {appState.isRegistered?<Login/>:null} */}
-      <SearchApp />
+      {!appState.isRegistered && !appState.isLoggedIn ? <Practice /> : null}
+      {appState.isRegistered && !appState.isLoggedIn ? (
+        <Login appState={appState} setAppState={setAppState} />
+      ) : null}
+      {appState.isLoggedIn ? <SearchApp /> : null}
     </div>
   );
 }

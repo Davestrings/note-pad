@@ -1,0 +1,34 @@
+$primary-color: #fb6900;
+$secondary-color: #fff;
+
+.container {
+  width: 80%;
+  margin: auto;
+  .register {
+    border: 1px solid $primary-color;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: $secondary-color;
+    height: 45px;
+    padding-left: 5px;
+    width: 100%;
+    margin-bottom: 5px;
+
+    &__btn {
+      border-radius: 5px;
+      background-color: $primary-color;
+      color: $secondary-color;
+      height: 45px;
+      width: 100%;
+      font-size: 1.2rem;
+      border: none;
+
+      &:hover {
+        color: $primary-color;
+        background-color: $secondary-color;
+        border: 1px solid $primary-color;
+      }
+    }
+  }
+}
