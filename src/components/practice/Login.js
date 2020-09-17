@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../../dist/css/register.css";
 
 const Login = ({ appState, setAppState }) => {
   const [formData, setFormData] = useState({
@@ -27,27 +28,41 @@ const Login = ({ appState, setAppState }) => {
     }
   };
   return (
-    <div className="container">
-      {console.log(formData)}
-      <h4>Login</h4>
-      <input
-        name="username"
-        placeholder="Username"
-        className="register"
-        onChange={onChangeHandler}
-      />
-      <br />
-      <input
-        name="password"
-        className="register"
-        placeholder="Password"
-        onChange={onChangeHandler}
-      />
-      <br />
-      <button className="register__btn" onClick={clickHandler}>
-        login
-      </button>
-    </div>
+    <React.Fragment>
+      <div className="brand-div">
+        <img
+          className="brand-img"
+          src={require("../../asset/book.png")}
+          alt="icon"
+        />{" "}
+        <span className="brand">DevNote</span>
+      </div>
+      <div className="container">
+        {console.log(formData)}
+        <div>
+          <img src={require("../../asset/undraw_book.png")} alt="icon" />
+        </div>
+        <h4 className="page-title">Login</h4>
+        <input
+          name="username"
+          placeholder="Username"
+          className="register"
+          onChange={onChangeHandler}
+        />
+        <br />
+        <input
+          name="password"
+          type="password"
+          className="register"
+          placeholder="Password"
+          onChange={onChangeHandler}
+        />
+        <br />
+        <button className="register__btn" onClick={clickHandler}>
+          Login
+        </button>
+      </div>
+    </React.Fragment>
   );
 };
 

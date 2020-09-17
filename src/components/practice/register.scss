@@ -1,5 +1,21 @@
-$primary-color: #fb6900;
-$secondary-color: #fff;
+@import "./modal.scss";
+@import "./config.scss";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+.brand-div {
+  // border-bottom: 1px solid $primary-color;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+
+  .brand {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+}
+.page-title {
+  margin-bottom: 50px;
+}
 
 .container {
   width: 80%;
@@ -28,7 +44,56 @@ $secondary-color: #fff;
         color: $primary-color;
         background-color: $secondary-color;
         border: 1px solid $primary-color;
+        @include transition-ease;
       }
     }
   }
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+}
+.card {
+  box-sizing: border-box;
+  border-radius: 5px;
+  height: 159px;
+  padding: 10px;
+  margin: 10px auto;
+  width: 90%;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  &__title {
+    text-align: left;
+    font-size: 1.5rem;
+  }
+  &__text {
+    font-size: 16px;
+    text-align: left;
+    text-overflow: ellipsis;
+    line-height: 1.8em;
+    max-height: 4em;
+    overflow: hidden;
+  }
+  .btn-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+  }
+  &__btn {
+    background-color: $primary-color;
+    color: $secondary-color;
+    width: 100px;
+    height: 30px;
+    font-size: 1rem;
+    margin-right: 10px;
+    border: none;
+    border-radius: 20px;
+  }
+}
+.addNote {
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+  margin: auto;
 }

@@ -6,7 +6,12 @@ const Searchbar = ({ search, setSearch }) => {
   };
   return (
     <div>
-      <input onChange={onChangeHandler} />
+      <input
+        className="search"
+        type="search"
+        placeholder="search"
+        onChange={onChangeHandler}
+      />
     </div>
   );
 };
