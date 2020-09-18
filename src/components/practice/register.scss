@@ -16,6 +16,10 @@
 .page-title {
   margin-bottom: 50px;
 }
+.title-div {
+  display: flex;
+  justify-content: space-between;
+}
 
 .container {
   width: 80%;
@@ -92,8 +96,12 @@
   }
 }
 .addNote {
-  width: 90%;
-  display: flex;
-  justify-content: flex-end;
-  margin: auto;
+  // width: 90%;
+  // display: flex;
+  // justify-content: flex-end;
+  // margin: auto;
+  position: fixed;
+  bottom: 10%;
+  right: 5%;
+  z-index: 100;
 }

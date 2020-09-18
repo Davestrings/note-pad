@@ -8,7 +8,10 @@ const Note = ({ notes }) => {
       {notes.map((note, index) => {
         return (
           <div key={index} className="card">
-            <h3 className="card__title">{note.title}</h3>
+            <div className="title-div">
+              <h3 className="card__title">{note.title}</h3>
+              <img src={require("../../asset/more_vert-24px.svg")} alt="icon" />
+            </div>
             <p className="card__text">{note.description}</p>
             <div className="btn-div">
               <button className="card__btn" disabled>

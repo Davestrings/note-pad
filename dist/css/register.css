@@ -124,6 +124,15 @@
   margin-bottom: 50px;
 }
 
+.title-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .container {
   width: 80%;
   margin: auto;
@@ -220,13 +229,9 @@
 }
 
 .addNote {
-  width: 90%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  margin: auto;
+  position: fixed;
+  bottom: 10%;
+  right: 5%;
+  z-index: 100;
 }
 /*# sourceMappingURL=register.css.map */

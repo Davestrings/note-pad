@@ -57,7 +57,7 @@ const SearchApp = () => {
               setShow({ show: true });
             }}
           >
-            <img src={require("../../asset/add_circle-24px.svg")} alt="icon" />
+            <img src={require("../../asset/add_circle2.svg")} alt="icon" />
           </span>
         </div>
         {show ? (
